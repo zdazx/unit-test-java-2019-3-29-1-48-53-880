@@ -13,6 +13,13 @@ import static org.mockito.Mockito.*;
  */
 public class GameControllerTest {
     @Test
+    public void should_begin_game() throws IOException {
+        GameController gameController = mock(GameController.class);
+        gameController.beginGame();
+        verify(gameController,times(1)).beginGame();
+    }
+
+    @Test
     public void should_play() throws IOException {
         GameController gameController = mock(GameController.class);
         InputCommand command = new GuessInputCommand();
